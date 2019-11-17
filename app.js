@@ -26,5 +26,10 @@ console.log('running');
 
 app.use('/admin', authRoute);
 
+//DEFAULT ROUTE
+app.use('/*', (req, res, next) => {
+    res.redirect('/admin/login')
+});
+
 
 module.exports = app;
