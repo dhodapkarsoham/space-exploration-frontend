@@ -1,22 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const localStorage = require('node-localstorage').LocalStorage;
-// const headers = {
-//     "Content-Type": "application/json",
-//     "Authorization": "Bearer"
-// }
 
-// localStorage.setItem('token', data.token);
 
 //Admin login
-console.log('to auth');
+console.log('Auth Route works');
 
 //GET THE LOGIN PAGE
 router.get('/login', (req, res, next) => {
-    // res.send('Login called to admin');
-    console.log('login page get');
-    res.render('login');
+    console.log('Login page get works');
+    if (req.cookies.token) {
+        res.render('adminOps')
+    } else {
+        res.render('login')
+    }
 });
 
 //LOGIN FUNCTIONALITY, CALLS LOGIN API
@@ -24,13 +21,7 @@ router.post('/login', (req, res, next) => {
     axios.post('https://space-exploration-api.herokuapp.com/user/login', {
         username: req.body.username,
         password: req.body.password,
-    }, 
-    // { 
-    //     headers: 
-    //     {
-    //     "Content-Type": "application/json",
-    //     "Authorization": "Bearer " + req.cookies.token
-    // }}
+    }
     ).then(response => {
         console.log(req.body.username);
         console.log(req.body.password);    
@@ -46,8 +37,8 @@ router.post('/login', (req, res, next) => {
 //GET ADMINOPS PAGE
 router.get('/adminOps', (req, res, next) => {
     // res.send('Login called to admin');
-    console.log('adminOps get');
-    res.render('adminOps');
+    console.log('adminOps get works');
+        res.render('adminOps');
 });
 
 //CALLS THE CREATE GALAXY API
@@ -67,8 +58,9 @@ router.post('/adminOpsCreateGalaxy', (req, res, next) => {
     .then(response => {
         // console.log(response);
         console.log(response.data.token);
-        res.cookie('token', response.data.token);
-        // res.redirect('/admin/adminOps');
+        
+        // res.cookie('token', response.data.token);
+        res.redirect('/admin/adminOps');
     }).catch(err => {
         console.log(err);
     })
@@ -90,10 +82,14 @@ router.post('/adminOpsDeleteGalaxy', (req, res, next) => {
         }}
     )   
     .then(response => {
-        res.cookie('token', response.data.token);
-        // res.redirect('/admin/adminOps');
+        console.log(req.cookies.token);
+        
+        // res.cookie('token', response.data.token);
+        console.log('DEMO LOG');
+        
+        res.redirect('/admin/adminOps');
     }).catch(err => {
-        console.log(err);
+        console.log('Error');
     })
 });
 
@@ -112,11 +108,10 @@ router.post('/adminOpsCreateStar', (req, res, next) => {
         "Authorization": "Bearer " + req.cookies.token
     }})
     .then(response => {
-        // console.log(response);
-        
         console.log(response.data.token);
-        res.cookie('token', response.data.token);
-        // res.redirect('/admin/adminOps');
+        
+        // res.cookie('token', response.data.token);
+        res.redirect('/admin/adminOps');
     }).catch(err => {
         console.log(err);
     })
@@ -138,12 +133,19 @@ router.post('/adminOpsDeleteStar', (req, res, next) => {
         }}
     )   
     .then(response => {
-        res.cookie('token', response.data.token);
-        // res.redirect('/admin/adminOps');
+        
+        // res.cookie('token', response.data.token);
+        res.redirect('/admin/adminOps');
     }).catch(err => {
         console.log(err);
     })
 });
 
-module.exports = router;
+router.post('/logout', (req, res, next) => {
+    console.log('Clearing cookies');
+    
+    res.clearCookie('token');
+    res.redirect('/');
+});
 
+module.exports = router;

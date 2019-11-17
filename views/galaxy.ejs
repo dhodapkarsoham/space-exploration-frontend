@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/stylesheet/galaxy.css">
+    <title>Galaxies</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Galaxies</h1>
+
+        <div class="galaxies-view-div">
+            <% for(var i=0;i<galaxies.length;i++){ %>
+            <div class="galaxy-name">
+                <%= galaxies[i].galaxyName %>
+            </div>
+            <div>
+                <%= galaxies[i].galaxyDistance %>
+            </div>
+            <div>
+                <%= galaxies[i].galaxyDescription %>
+            </div>
+            <br>
+            <%}%>
+        </div>
+    </div>
+
+</body>
+</html>

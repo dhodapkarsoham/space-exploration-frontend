@@ -6,9 +6,11 @@ const mongoose = require('mongoose');
 
 const cookieParser = require('cookie-parser');
 
-const authRoute = require('./routes/auth')
+const homeRoute = require('./routes/home');
+const authRoute = require('./routes/auth');
 
 app.use('/assets', express.static('assets'));
+app.use('/views', express.static('views'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -22,13 +24,14 @@ app.use(function(req, res, next) {
   });
 
 
-console.log('running');
+console.log('App running');
 
 app.use('/admin', authRoute);
+app.use('/home', homeRoute);
 
 //DEFAULT ROUTE
 app.use('/*', (req, res, next) => {
-    res.redirect('/admin/login')
+    res.redirect('/home')
 });
 
 

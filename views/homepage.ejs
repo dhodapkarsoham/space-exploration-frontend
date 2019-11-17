@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <script src="/routes/home.js"></script>
+    <link rel="stylesheet" href="/assets/stylesheet/homepage.css">
     <title>Home</title>
 </head>
+
 <body>
-    <button>
+    <div class="container">
+        <h2>What would you like to do today?</h2>
+        <form action="/home/galaxies">
+            <input type="submit" value="Explore galaxies" class="input-btn" />
+        </form>
+
+        <form action="/home/stars">
+            <input type="submit" value="Explore stars" class="input-btn" />
+        </form>
+
+        <form action="/admin/login">
+            <input type="submit" value="Admin operations" class="input-btn" />
+        </form>
+    </div>
 </body>
+
 </html>

@@ -15,7 +15,7 @@
 
     <div class="container">
         <h1>Admin Ops</h1>
-        <form id="admin-form" ,action="/admin/adminOpsCreateGalaxy" , method="POST" , name="create-galaxy">
+        <form id="admin-form" action="/admin/adminOpsCreateGalaxy" method="POST" name="create-galaxy">
             <fieldset>
                     <legend>Create Galaxy:</legend>
             <table class="table-style">
@@ -25,7 +25,7 @@
                             <label for="galaxyName">Galaxy Name:</label>
                         </td>
                         <td>
-                            <input type="text" id="galaxyName" name="galaxyName" , placeholder="Name" , required>
+                            <input type="text" id="galaxyName" name="galaxyName" placeholder="Name" required>
                         </td>
                     </div>
                 </tr>
@@ -36,7 +36,7 @@
                             <label for="galaxyDistance">Galaxy Distance:</label>
                         </td>
                         <td>
-                            <input type="text" id="galaxyDistance" name="galaxyDistance" , placeholder="Distance" ,required>
+                            <input type="text" id="galaxyDistance" name="galaxyDistance" placeholder="Distance" required>
                         </td>
                     </div>
                 </tr>
@@ -47,20 +47,20 @@
                             <label for="galaxyDescription">Galaxy Description:</label>
                         </td>
                         <td>
-                            <textarea rows="4" cols="26" id="galaxyDescription" name="galaxyDescription" ,placeholder="Description" , required></textarea>
+                            <textarea rows="4" cols="26" id="galaxyDescription" name="galaxyDescription" placeholder="Description" required></textarea>
                         </td>
                     </div>
                 </tr>
 
                 <tr>
-                    <td><input type="submit" value="Create Galaxy", class="submit-btn"></td>
+                    <td><input type="submit" value="Create Galaxy" class="submit-btn"></td>
                 </tr>
             </table>
         </fieldset>
         </form>
         <br>
 
-        <form id="admin-form" ,action="/admin/adminOpsCreateStar" , method="POST" , name="create-star">
+        <form id="admin-form" action="/admin/adminOpsCreateStar" method="POST" name="create-star">
             <fieldset>
                     <legend>Create Star:</legend>
             <table class="table-style">
@@ -70,7 +70,7 @@
                             <label for="starName">Star Name:</label>
                         </td>
                         <td>
-                            <input type="text" id="starName" name="starName" , placeholder="Name" , required>
+                            <input type="text" id="starName" name="starName" placeholder="Name" required>
                         </td>
                     </div>
                 </tr>
@@ -81,7 +81,7 @@
                             <label for="starDistance">Star Distance:</label>
                         </td>
                         <td>
-                            <input type="text" id="starDistace" name="starDistace" , placeholder="Distance" ,required>
+                            <input type="text" id="starDistance" name="starDistance" placeholder="Distance" required>
                         </td>
                     </div>
                 </tr>
@@ -92,19 +92,19 @@
                             <label for="starDescription">Star Description:</label>
                         </td>
                         <td>
-                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" ,placeholder="Description" , required></textarea>
+                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" ,placeholder="Description" required></textarea>
                         </td>
                     </div>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Create Star", class="submit-btn"></td>
+                    <td><input type="submit" value="Create Star" class="submit-btn"></td>
                 </tr>
             </table>
             </fieldset>
         </form>
         <br>
 
-        <form id="admin-form", action="/admin/adminOpsDeleteGalaxy", method="POST", name="delete-galaxy">
+        <form id="admin-form" action="/admin/adminOpsDeleteGalaxy" method="POST" name="delete-galaxy">
             <fieldset>
             <legend>Delete Galaxy:</legend>   
                 <table class="table-style">
@@ -113,11 +113,11 @@
                             <label for="galaxyName">Galaxy Name:</label>
                         </td>
                         <td>
-                            <input type="text" id="galaxyName" name="galaxyName" , placeholder="Name" , required>
+                            <input type="text" id="galaxyName" name="galaxyName" placeholder="Name" required>
                         </td>
                         <tr>
                             <td>
-                                <input type="submit" value="Delete Galaxy", class="submit-btn">
+                                <input type="submit" value="Delete Galaxy" class="submit-btn">
                             </td>
                         </tr>
                     </tr>
@@ -126,7 +126,7 @@
         </form>
         <br>
 
-        <form id="admin-form", action="/admin/adminOpsDeleteStar", method="POST", name="delete-star">
+        <form id="admin-form" action="/admin/adminOpsDeleteStar" method="POST" name="delete-star">
             <fieldset>
                     <legend>Delete Star:</legend>
             <table class="table-style">
@@ -135,27 +135,23 @@
                         <label for="starName">Star Name:</label>
                     </td>
                     <td>
-                        <input type="text" id="starName" name="starName" , placeholder="Name" , required>
+                        <input type="text" id="starName" name="starName" placeholder="Name" required>
                     </td>
                     <tr>
                         <td>
-                            <input type="submit" value="Delete Star", class="submit-btn">
+                            <input type="submit" value="Delete Star" class="submit-btn">
                         </td>
                     </tr>
                 </tr>
             </table>
             </fieldset>
         </form>
+
+        <form action="/admin/logout" method="POST" name="logout-btn">
+            <input type="submit" value="Logout" class="submit-btn">
+        </form>
         <br>
     </div>
-
-    <script>
-        function submit() {
-            document.getElementById("admin-form").reset();
-        }
-    </script>
-
-
 </body>
 
 </html>
