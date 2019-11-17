@@ -12,7 +12,7 @@ router.get('/login', (req, res, next) => {
     if (req.cookies.token) {
         res.render('adminOps')
     } else {
-        res.render('login')
+        res.render('login', {message: null})
     }
 });
 
@@ -31,6 +31,7 @@ router.post('/login', (req, res, next) => {
         // res.render('galaxies');
     }).catch(err => {
         console.log(err);
+        res.render('login', {message: "Access denied! Wrong username/password"})
     })
 });
 

@@ -10,20 +10,28 @@
 </head>
 
 <body>
-
     <div class="container">
+            <form action="/home">
+                <tr><td><input type="submit" value="Home" class="submit-btn" id="home-btn"></td></tr>
+            </form>
         <h1>Stars</h1>
         <div class="galaxies-view-div">
             <% for(var i=0;i<stars.length;i++){ %>
             <div class="star-name">
-                <%= stars[i].starName %>
+                Name: <%= stars[i].starName %>
             </div>
+            <br>
             <div>
-                <%= stars[i].starDistance %>
+                Distance from Earth: <%= stars[i].starDistance %>
             </div>
+            <br>
             <div>
-                <%= stars[i].starDescription %>
+                Description: <%= stars[i].starDescription %>
             </div>
+            <% if(i < stars.length - 1){ %>
+                <br>
+                <hr>
+            <% } %>
             <br>
             <%}%>
         </div>

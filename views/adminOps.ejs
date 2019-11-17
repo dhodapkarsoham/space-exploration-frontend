@@ -14,7 +14,10 @@
     <img src="https://www.thehindubusinessline.com/incoming/tgfb02/article28434188.ece/alternates/FREE_435/gslvjpg" height="auto" width="auto">
 
     <div class="container">
-        <h1>Admin Ops</h1>
+            <form action="/home">
+                <tr><td><input type="submit" value="Home" class="submit-btn" id="home-btn"></td></tr>
+            </form>
+        <h1>Admin Operations</h1>
         <form id="admin-form" action="/admin/adminOpsCreateGalaxy" method="POST" name="create-galaxy">
             <fieldset>
                     <legend>Create Galaxy:</legend>
@@ -92,7 +95,7 @@
                             <label for="starDescription">Star Description:</label>
                         </td>
                         <td>
-                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" ,placeholder="Description" required></textarea>
+                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" placeholder="Description" required></textarea>
                         </td>
                     </div>
                 </tr>
@@ -148,7 +151,7 @@
         </form>
 
         <form action="/admin/logout" method="POST" name="logout-btn">
-            <input type="submit" value="Logout" class="submit-btn">
+            <input type="submit" value="Logout" class="submit-btn" id="logout-btn">
         </form>
         <br>
     </div>

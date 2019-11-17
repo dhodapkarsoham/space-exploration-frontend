@@ -21,13 +21,44 @@ body, html {
 
 .container input[type=text] {
     width: 200px;
+    margin-top: 8px;
+    padding: 2px;
 }
 
 .submit-btn {
-    align-content: center;
-    text-align: center;
-    padding-left: 10px;
-    width: 100px;
+    background-color: whitesmoke;
+    color: black;
+    /* float: left;
+    display: inline; */
+    border: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    padding: 6px;
+    margin-right: 10px;
+    width: 120px;
+
+}
+
+.submit-btn:hover {
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+#logout-btn {
+    width: 20%;
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+#logout-btn:hover {
+    transition-timing-function: ease-out;
+    background-color: rgb(155, 0, 0);
+    color: ghostwhite;
+    font-size: 15px;
+    
 }
 
 .description {
@@ -35,18 +66,37 @@ body, html {
 }
 
 img {
-    margin-top: 20px;
+    margin-top: 55px;
     margin-left: 0;
     left: 0;
     float: left;
     max-width: 100%;
-    height: auto;
+    height: 700px;
     opacity: 0.9;
 }
 
 fieldset {
-    width: 55%;
+    width: 50%;
 }
 legend{
     width: fit-content;
+}
+
+td {
+    width: 150px;
+}
+
+#home-btn {
+    float: right;
+    margin-top: -70px;
+    margin-left: 450px;
+}
+
+#home-btn:hover {
+    background-color: rgb(25, 120, 214);
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
 }
