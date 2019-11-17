@@ -8,11 +8,12 @@ const cookieParser = require('cookie-parser');
 
 const authRoute = require('./routes/auth')
 
+app.use('/assets', express.static('assets'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.set('view engine', 'ejs');
-app.use(express.static('style'));
+
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

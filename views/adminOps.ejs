@@ -1,67 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/stylesheet/adminOps.css">
     <title>Admin Ops</title>
 </head>
+
 <body>
-    <h1>Admin Ops</h1>
-    <form action="/admin/adminOpsCreateGalaxy", method="POST">
-        <div>
-            <label for="galaxyName">Galaxy Name:</label>
-            <input type="text" id="galaxyName" name="galaxyName">
-        </div>
 
-        <div>
-            <label for="galaxyDistance">Galaxy Distance:</label>
-            <input type="text" id="galaxyDistance" name="galaxyDistance">
-        </div>
+    <img src="https://www.thehindubusinessline.com/incoming/tgfb02/article28434188.ece/alternates/FREE_435/gslvjpg" height="auto" width="auto">
 
-        <div>
-            <label for="galaxyDescription">Galaxy Description:</label>
-            <input type="text" id="galaxyDescription" name="galaxyDescription">
-        </div>
+    <div class="container">
+        <h1>Admin Ops</h1>
+        <form id="admin-form" ,action="/admin/adminOpsCreateGalaxy" , method="POST" , name="create-galaxy">
+            <fieldset>
+                    <legend>Create Galaxy:</legend>
+            <table class="table-style">
+                <tr>
+                    <div>
+                        <td>
+                            <label for="galaxyName">Galaxy Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="galaxyName" name="galaxyName" , placeholder="Name" , required>
+                        </td>
+                    </div>
+                </tr>
 
-        <input type="submit" value="Create">
-    </form>
+                <tr>
+                    <div>
+                        <td>
+                            <label for="galaxyDistance">Galaxy Distance:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="galaxyDistance" name="galaxyDistance" , placeholder="Distance" ,required>
+                        </td>
+                    </div>
+                </tr>
 
-        <form action="/admin/adminOpsDeleteGalaxy", method="POST">
-            <div>
-                <label for="galaxyName">Galaxy Name:</label>
-                <input type="text" id="galaxyName" name="galaxyName">
-            </div>
-            <input type="submit" value="Delete">
+                <tr>
+                    <div>
+                        <td>
+                            <label for="galaxyDescription">Galaxy Description:</label>
+                        </td>
+                        <td>
+                            <textarea rows="4" cols="26" id="galaxyDescription" name="galaxyDescription" ,placeholder="Description" , required></textarea>
+                        </td>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Create Galaxy", class="submit-btn"></td>
+                </tr>
+            </table>
+        </fieldset>
         </form>
+        <br>
 
-        <form action="/admin/adminOpsCreateStar", method="POST">
-            <div>
-                <label for="galaxyName">Star Name:</label>
-                <input type="text" id="starName" name="starName">
-            </div>
-    
-            <div>
-                <label for="galaxyDistance">Galaxy Distance:</label>
-                <input type="text" id="starDistance" name="starDistance">
-            </div>
-    
-            <div>
-                <label for="galaxyDescription">Galaxy Description:</label>
-                <input type="text" id="starDescription" name="starDescription">
-            </div>
-    
-            <input type="submit" value="Create">
+        <form id="admin-form" ,action="/admin/adminOpsCreateStar" , method="POST" , name="create-star">
+            <fieldset>
+                    <legend>Create Star:</legend>
+            <table class="table-style">
+                <tr>
+                    <div>
+                        <td>
+                            <label for="starName">Star Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="starName" name="starName" , placeholder="Name" , required>
+                        </td>
+                    </div>
+                </tr>
+
+                <tr>
+                    <div>
+                        <td>
+                            <label for="starDistance">Star Distance:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="starDistace" name="starDistace" , placeholder="Distance" ,required>
+                        </td>
+                    </div>
+                </tr>
+
+                <tr>
+                    <div>
+                        <td>
+                            <label for="starDescription">Star Description:</label>
+                        </td>
+                        <td>
+                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" ,placeholder="Description" , required></textarea>
+                        </td>
+                    </div>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Create Star", class="submit-btn"></td>
+                </tr>
+            </table>
+            </fieldset>
         </form>
+        <br>
 
-        <form action="/admin/adminOpsDeleteStar", method="POST">
-            <div>
-                <label for="starName">Star Name:</label>
-                <input type="text" id="starName" name="starName">
-            </div>
-            <input type="submit" value="Delete">
+        <form id="admin-form", action="/admin/adminOpsDeleteGalaxy", method="POST", name="delete-galaxy">
+            <fieldset>
+            <legend>Delete Galaxy:</legend>   
+                <table class="table-style">
+                    <tr>
+                        <td>
+                            <label for="galaxyName">Galaxy Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="galaxyName" name="galaxyName" , placeholder="Name" , required>
+                        </td>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Delete Galaxy", class="submit-btn">
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+            </fieldset>
         </form>
+        <br>
 
-    
+        <form id="admin-form", action="/admin/adminOpsDeleteStar", method="POST", name="delete-star">
+            <fieldset>
+                    <legend>Delete Star:</legend>
+            <table class="table-style">
+                <tr>
+                    <td>
+                        <label for="starName">Star Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="starName" name="starName" , placeholder="Name" , required>
+                    </td>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Delete Star", class="submit-btn">
+                        </td>
+                    </tr>
+                </tr>
+            </table>
+            </fieldset>
+        </form>
+        <br>
+    </div>
+
+    <script>
+        function submit() {
+            document.getElementById("admin-form").reset();
+        }
+    </script>
+
+
 </body>
+
 </html>

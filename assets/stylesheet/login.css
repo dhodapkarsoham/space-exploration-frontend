@@ -1,0 +1,32 @@
+body, html {
+    background-image: url("https://i.imgur.com/GCJRhiA.png");
+    max-height: 100%;
+    max-width: 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    margin-top: 250px;
+    margin-left: 550px;
+}
+
+.container {
+    color:whitesmoke;
+    
+}
+
+.container input {
+    width: 50%;
+}
+
+.login-btn {
+    background-color: whitesmoke;
+    color: black;
+    width: 10%;
+}
+
+.login-btn:hover {
+    background-color: dimgrey;
+    color: white;
+}

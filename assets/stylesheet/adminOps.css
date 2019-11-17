@@ -1,0 +1,51 @@
+body, html {
+    background-image: url("https://i.imgur.com/GCJRhiA.png");
+    max-height: 100%;
+    max-width: 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    /* margin-top: 50px; */
+    /* margin-left: 350px; */
+}
+
+.container {
+    margin-left: 35%;
+    margin-top: 100px;
+    color:whitesmoke;
+    
+}
+
+.container input[type=text] {
+    width: 200px;
+}
+
+.submit-btn {
+    align-content: center;
+    text-align: center;
+    padding-left: 10px;
+    width: 100px;
+}
+
+.description {
+    height: max-content;
+}
+
+img {
+    margin-top: 20px;
+    margin-left: 0;
+    left: 0;
+    float: left;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+fieldset {
+    width: 55%;
+}
+legend{
+    width: fit-content;
+}
