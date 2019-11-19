@@ -11,105 +11,113 @@
 
 <body>
 
-    <img src="https://www.thehindubusinessline.com/incoming/tgfb02/article28434188.ece/alternates/FREE_435/gslvjpg" height="auto" width="auto">
+    <img src="https://www.thehindubusinessline.com/incoming/tgfb02/article28434188.ece/alternates/FREE_435/gslvjpg"
+        height="auto" width="auto">
 
     <div class="container">
-            <form action="/home">
-                <tr><td><input type="submit" value="Home" class="submit-btn" id="home-btn"></td></tr>
-            </form>
+        <form action="/home">
+            <tr>
+                <td><input type="submit" value="Home" class="submit-btn" id="home-btn"></td>
+            </tr>
+        </form>
         <h1>Admin Operations</h1>
         <form id="admin-form" action="/admin/adminOpsCreateGalaxy" method="POST" name="create-galaxy">
             <fieldset>
-                    <legend>Create Galaxy:</legend>
-            <table class="table-style">
-                <tr>
-                    <div>
-                        <td>
-                            <label for="galaxyName">Galaxy Name:</label>
-                        </td>
-                        <td>
-                            <input type="text" id="galaxyName" name="galaxyName" placeholder="Name" required>
-                        </td>
-                    </div>
-                </tr>
+                <legend>Create Galaxy:</legend>
+                <table class="table-style">
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="galaxyName">Galaxy Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="galaxyName" name="galaxyName" placeholder="Name" required>
+                            </td>
+                        </div>
+                    </tr>
 
-                <tr>
-                    <div>
-                        <td>
-                            <label for="galaxyDistance">Galaxy Distance:</label>
-                        </td>
-                        <td>
-                            <input type="text" id="galaxyDistance" name="galaxyDistance" placeholder="Distance" required>
-                        </td>
-                    </div>
-                </tr>
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="galaxyDistance">Galaxy Distance:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="galaxyDistance" name="galaxyDistance" placeholder="Distance"
+                                    required>
+                            </td>
+                        </div>
+                    </tr>
 
-                <tr>
-                    <div>
-                        <td>
-                            <label for="galaxyDescription">Galaxy Description:</label>
-                        </td>
-                        <td>
-                            <textarea rows="4" cols="26" id="galaxyDescription" name="galaxyDescription" placeholder="Description" required></textarea>
-                        </td>
-                    </div>
-                </tr>
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="galaxyDescription">Galaxy Description:</label>
+                            </td>
+                            <td>
+                                <textarea rows="4" cols="26" id="galaxyDescription" name="galaxyDescription"
+                                    placeholder="Description" required></textarea>
+                            </td>
+                        </div>
+                    </tr>
 
-                <tr>
-                    <td><input type="submit" value="Create Galaxy" class="submit-btn"></td>
-                </tr>
-            </table>
-        </fieldset>
+                    <tr>
+                        <td><input type="submit" value="Create Galaxy" class="submit-btn"></td>
+                    </tr>
+                    </tr>
+                </table>
+            </fieldset>
         </form>
         <br>
 
         <form id="admin-form" action="/admin/adminOpsCreateStar" method="POST" name="create-star">
             <fieldset>
-                    <legend>Create Star:</legend>
-            <table class="table-style">
-                <tr>
-                    <div>
-                        <td>
-                            <label for="starName">Star Name:</label>
-                        </td>
-                        <td>
-                            <input type="text" id="starName" name="starName" placeholder="Name" required>
-                        </td>
-                    </div>
-                </tr>
+                <legend>Create Star:</legend>
+                <table class="table-style">
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="starName">Star Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="starName" name="starName" placeholder="Name" required>
+                            </td>
+                        </div>
+                    </tr>
 
-                <tr>
-                    <div>
-                        <td>
-                            <label for="starDistance">Star Distance:</label>
-                        </td>
-                        <td>
-                            <input type="text" id="starDistance" name="starDistance" placeholder="Distance" required>
-                        </td>
-                    </div>
-                </tr>
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="starDistance">Star Distance:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="starDistance" name="starDistance" placeholder="Distance"
+                                    required>
+                            </td>
+                        </div>
+                    </tr>
 
-                <tr>
-                    <div>
-                        <td>
-                            <label for="starDescription">Star Description:</label>
-                        </td>
-                        <td>
-                            <textarea rows="4" cols="26" id="starDescription" name="starDescription" placeholder="Description" required></textarea>
-                        </td>
-                    </div>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Create Star" class="submit-btn"></td>
-                </tr>
-            </table>
+                    <tr>
+                        <div>
+                            <td>
+                                <label for="starDescription">Star Description:</label>
+                            </td>
+                            <td>
+                                <textarea rows="4" cols="26" id="starDescription" name="starDescription"
+                                    placeholder="Description" required></textarea>
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Create Star" class="submit-btn"></td>
+                    </tr>
+                </table>
             </fieldset>
         </form>
         <br>
 
         <form id="admin-form" action="/admin/adminOpsDeleteGalaxy" method="POST" name="delete-galaxy">
             <fieldset>
-            <legend>Delete Galaxy:</legend>   
+                <legend>Delete Galaxy:</legend>
                 <table class="table-style">
                     <tr>
                         <td>
@@ -118,11 +126,11 @@
                         <td>
                             <input type="text" id="galaxyName" name="galaxyName" placeholder="Name" required>
                         </td>
-                        <tr>
-                            <td>
-                                <input type="submit" value="Delete Galaxy" class="submit-btn">
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Delete Galaxy" class="submit-btn">
+                        </td>
+                    </tr>
                     </tr>
                 </table>
             </fieldset>
@@ -131,25 +139,34 @@
 
         <form id="admin-form" action="/admin/adminOpsDeleteStar" method="POST" name="delete-star">
             <fieldset>
-                    <legend>Delete Star:</legend>
-            <table class="table-style">
-                <tr>
-                    <td>
-                        <label for="starName">Star Name:</label>
-                    </td>
-                    <td>
-                        <input type="text" id="starName" name="starName" placeholder="Name" required>
-                    </td>
+                <legend>Delete Star:</legend>
+                <table class="table-style">
+                    <tr>
+                        <td>
+                            <label for="starName">Star Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="starName" name="starName" placeholder="Name" required>
+                        </td>
                     <tr>
                         <td>
                             <input type="submit" value="Delete Star" class="submit-btn">
                         </td>
                     </tr>
-                </tr>
-            </table>
+                    </tr>
+                </table>
             </fieldset>
         </form>
 
+        <table>
+            <tr>
+                <% if(message){ %>
+                <td class="msg-table">
+                    <p><%= message %></p>
+                </td>
+                <% } %>
+            </tr>
+        </table>
         <form action="/admin/logout" method="POST" name="logout-btn">
             <input type="submit" value="Logout" class="submit-btn" id="logout-btn">
         </form>

@@ -9,10 +9,7 @@ body, html {
     background-blend-mode: saturation;
     backface-visibility: visible;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 700;
-    /* margin-top: 50px; */
-    /* margin-left: 350px; */
-    /* height: 100%; */
+    font-weight: 600;
 }
 
 h1 {
@@ -20,7 +17,7 @@ h1 {
 }
 
 .container {
-    color:white;
+    color:rgb(245, 230, 201);
     
 }
 
@@ -32,8 +29,6 @@ hr{
 .submit-btn {
     background-color: whitesmoke;
     color: black;
-    /* float: left;
-    display: inline; */
     border: 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 14px;

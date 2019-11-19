@@ -23,9 +23,6 @@ app.use(function(req, res, next) {
     next();
   });
 
-
-console.log('App running');
-
 app.use('/admin', authRoute);
 app.use('/home', homeRoute);
 

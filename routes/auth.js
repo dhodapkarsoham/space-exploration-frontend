@@ -4,13 +4,11 @@ const axios = require('axios');
 
 
 //Admin login
-console.log('Auth Route works');
 
 //GET THE LOGIN PAGE
 router.get('/login', (req, res, next) => {
-    console.log('Login page get works');
     if (req.cookies.token) {
-        res.render('adminOps')
+        res.render('adminOps', {message: null})
     } else {
         res.render('login', {message: null})
     }
@@ -23,29 +21,20 @@ router.post('/login', (req, res, next) => {
         password: req.body.password,
     }
     ).then(response => {
-        console.log(req.body.username);
-        console.log(req.body.password);    
-        console.log(response.data.token);
         res.cookie('token', response.data.token);
         res.redirect('/admin/adminOps');
-        // res.render('galaxies');
     }).catch(err => {
-        console.log(err);
         res.render('login', {message: "Access denied! Wrong username/password"})
     })
 });
 
 //GET ADMINOPS PAGE
 router.get('/adminOps', (req, res, next) => {
-    // res.send('Login called to admin');
-    console.log('adminOps get works');
-        res.render('adminOps');
+    res.render('adminOps', {message: null});
 });
 
 //CALLS THE CREATE GALAXY API
 router.post('/adminOpsCreateGalaxy', (req, res, next) => {
-    console.log('In create galaxies');
-    console.log(req.cookies.token);
     
     axios.post('https://space-exploration-api.herokuapp.com/galaxies/create',{
         galaxyName: req.body.galaxyName,
@@ -57,20 +46,14 @@ router.post('/adminOpsCreateGalaxy', (req, res, next) => {
         "Authorization": "Bearer " + req.cookies.token
     }})
     .then(response => {
-        // console.log(response);
-        console.log(response.data.token);
-        
-        // res.cookie('token', response.data.token);
         res.redirect('/admin/adminOps');
     }).catch(err => {
-        console.log(err);
+        res.render('adminOps', {message: 'Operation unsuccessful!'});
     })
 });
 
 //CALLS THE DELETE GALAXY API
 router.post('/adminOpsDeleteGalaxy', (req, res, next) => {
-    console.log('In delete galaxies');
-    console.log(req.cookies.token);
     
     axios.delete(
         'https://space-exploration-api.herokuapp.com/galaxies/delete',
@@ -83,22 +66,15 @@ router.post('/adminOpsDeleteGalaxy', (req, res, next) => {
         }}
     )   
     .then(response => {
-        console.log(req.cookies.token);
-        
-        // res.cookie('token', response.data.token);
-        console.log('DEMO LOG');
-        
         res.redirect('/admin/adminOps');
     }).catch(err => {
-        console.log('Error');
+        res.render('adminOps', {message: "Operation unsuccessful!"});
     })
 });
 
 //CALLS THE CREATE STARS API
 router.post('/adminOpsCreateStar', (req, res, next) => {
-    console.log('In create stars');
-    console.log(req.cookies.token);
-    
+
     axios.post('https://space-exploration-api.herokuapp.com/stars/create',{
         starName: req.body.starName,
         starDistance: req.body.starDistance,
@@ -109,19 +85,14 @@ router.post('/adminOpsCreateStar', (req, res, next) => {
         "Authorization": "Bearer " + req.cookies.token
     }})
     .then(response => {
-        console.log(response.data.token);
-        
-        // res.cookie('token', response.data.token);
         res.redirect('/admin/adminOps');
     }).catch(err => {
-        console.log(err);
+        res.render('adminOps', {message: "Operation unsuccessful!"});
     })
 });
 
 //CALLS THE DELETE STARS API
 router.post('/adminOpsDeleteStar', (req, res, next) => {
-    console.log('In delete stars');
-    console.log(req.cookies.token);
     
     axios.delete(
         'https://space-exploration-api.herokuapp.com/stars/delete',
@@ -134,17 +105,14 @@ router.post('/adminOpsDeleteStar', (req, res, next) => {
         }}
     )   
     .then(response => {
-        
-        // res.cookie('token', response.data.token);
         res.redirect('/admin/adminOps');
     }).catch(err => {
-        console.log(err);
+        res.render('adminOps', {message: "Operation unsuccessful!"});
     })
 });
 
 router.post('/logout', (req, res, next) => {
-    console.log('Clearing cookies');
-    
+
     res.clearCookie('token');
     res.redirect('/');
 });
